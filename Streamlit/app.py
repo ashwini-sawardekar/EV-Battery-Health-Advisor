@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import plotly.express as px
 
 # Load saved assets
 model = joblib.load('Models/battery_soh_model.pkl')
@@ -32,3 +33,16 @@ if st.button("Calculate SOH"):
         st.error("Battery performance below threshold. Recommend: Second-life transition.")
     else:
         st.success("Battery is within operational limits.")
+# show context
+st.subheader("Degradation Trend")
+# Create a dummy dataframe representing the expected degradation curve
+trend_data = pd.DataFrame({
+    'Cycle': range(0, 1000, 50),
+    'Expected_SOH': [100 - (i * 0.05) for i in range(0, 1000, 50)]
+})
+
+# Highlight where the current prediction sits on that curve
+fig = px.line(trend_data, x='Cycle', y='Expected_SOH', title="Battery Life Degradation Curve")
+fig.add_scatter(x=[cycle], y=[prediction], mode='markers', name='Your Battery', marker=dict(size=12, color='red'))
+
+st.plotly_chart(fig)
