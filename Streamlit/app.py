@@ -3,8 +3,8 @@ import pandas as pd
 import joblib
 
 # Load saved assets
-model = joblib.load('../Models/battery_soh_model.pkl')
-scaler = joblib.load('../Models/scaler.pkl')
+model = joblib.load('Models/battery_soh_model.pkl')
+scaler = joblib.load('Models/scaler.pkl')
 
 st.title("EV Battery Health Advisor")
 st.markdown("Use this tool to predict the state of health for lithium-ion packs.")
