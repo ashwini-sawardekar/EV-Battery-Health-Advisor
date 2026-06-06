@@ -41,7 +41,7 @@ Ensure you have Python 3.11 or higher installed.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/](https://github.com/)[YOUR_GITHUB_USERNAME]/ev-battery-health-advisor.git
+   git clone https://github.com/ashwini-sawardekar/EV-Battery-Health-Advisor
    cd ev-battery-health-advisor
    ```
 
