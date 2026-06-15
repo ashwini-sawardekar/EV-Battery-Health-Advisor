@@ -45,8 +45,8 @@ if st.button("Calculate State of Health (SOH)"):
     
     # Create dummy trend data for visualization purposes
     trend_data = pd.DataFrame({
-        'Cycle': range(0, 1000, 50),
-        'Expected_SOH': [100 - (i * 0.05) for i in range(0, 1000, 50)]
+        'Cycle': range(0, 2000, 50),
+        'Expected_SOH': [100 - (i * 0.05) for i in range(0, 2000, 50)]
     })
     
     # Generate the line chart
