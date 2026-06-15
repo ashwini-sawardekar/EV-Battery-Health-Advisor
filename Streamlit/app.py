@@ -35,6 +35,8 @@ if st.button("Calculate State of Health (SOH)"):
     
     if prediction < 80:
         col2.error("Status: Degraded (Repurpose for Storage)")
+    elif prediction < 40:
+        col2.error("Status: Degraded (Recycle)")
     else:
         col2.success("Status: Healthy (Vehicle Use)")
 
