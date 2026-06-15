@@ -33,10 +33,10 @@ if st.button("Calculate State of Health (SOH)"):
     col1, col2 = st.columns(2)
     col1.metric("Predicted SOH", f"{prediction:.2f}%")
     
-    if prediction < 80:
-        col2.error("Status: Degraded (Repurpose for Storage)")
-    elif prediction < 40:
+    if prediction < 40:
         col2.error("Status: Degraded (Recycle)")
+    elif prediction < 80:
+        col2.error("Status: Degraded (Repurpose for Storage)")
     else:
         col2.success("Status: Healthy (Vehicle Use)")
 
